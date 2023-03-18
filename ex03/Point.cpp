@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 02:06:34 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/02/21 02:06:34 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/18 12:29:42 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ Point::~Point(void) {}
 
 Fixed const&	Point::getX(void) const {return (_x);}
 Fixed const&	Point::getY(void) const {return (_y);}
-//void			Point::setX(Fixed const& f) {this->_x = f;}
-//void			Point::setY(Fixed const& f) {this->_y = f;}
 
-
-Point&	Point::operator=(Point const& other) {
-//	std::cout << "Point constructor by assignation " << std::endl;
-//	this->_x = other.getX();
-//	this->_y = other.getY();
+Point& Point::operator=(const Point& other) 
+{
+	if (this != &other)
+	{
+		const_cast<Fixed&>(_x) = other.getX();
+		const_cast<Fixed&>(_y) = other.getY();
+	}
 	return (*this);
 }
 
@@ -66,6 +66,5 @@ Point	Point::orthogonal_right(void) const {
 
 std::ostream&	operator<<(std::ostream& s, Point const& p)
 {
-	s << "Point{" << p.getX() << ", " << p.getY() << "} ";
-	return (s);
+	return (s << "Point{" << p.getX() << ", " << p.getY() << "} ");
 }

@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 02:11:28 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/18 08:05:40 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/18 09:41:01 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,5 @@ float	Fixed::toFloat(void) const
 
 std::ostream&	operator<<(std::ostream& out, Fixed const& f)
 {
-	out << f.toFloat();
-	return (out);
+	return (out << f.toFloat());
 }
