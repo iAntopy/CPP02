@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:41:35 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/20 23:46:04 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/19 00:07:08 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,12 @@ void	draw_bsp_canvas(Point const& a, Point const& b, Point const& c)
 {
 	const int	width = 60;
 	const int	height = 30;
-	Point		pxl;
 
 	for (int y = 0; y < height; y++)
 	{
 		for (int x = 0; x < width; x++)
 		{
-			pxl = Point(x * 1.0f, y * 2.0f);
+			Point	pxl = Point(x * 1.0f, y * 2.0f);
 //			std::cout << "x : " << x << " y : " << y << " px : " << px << std::endl;
 			if (bsp(a, b, c, pxl))
 				std::cout << "#";
@@ -91,6 +90,7 @@ int main( void )
 	Point	a(2.0f, 2.0f);
 	Point	b(65.0f, 2.0f);
 	Point	c(2.0f, 65.0f);
+
 //	triangle_test_1();
 //	triangle_test_2();
 //	triangle_test_3();

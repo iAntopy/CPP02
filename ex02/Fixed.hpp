@@ -6,14 +6,16 @@
 /*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:44:52 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/18 09:58:27 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/18 23:10:26 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __FIXED_HPP__
 # define __FIXED_HPP__
 
-#include <fstream>
+# include <iostream>
+# include <cmath>
+# include <fstream>
 
 class Fixed
 {

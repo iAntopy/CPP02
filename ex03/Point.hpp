@@ -6,13 +6,14 @@
 /*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 02:00:07 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/18 12:10:35 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/19 00:38:08 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __POINT_HPP__
 # define __POINT_HPP__
 
+# include <iostream>
 # include <fstream>
 # include "Fixed.hpp"
 
@@ -28,9 +29,8 @@ class Point
 		Point(float x, float y);
 		Point(Fixed const& x, Fixed const& y);
 		Point(Point const& other);
-		~Point(void);
-
 		Point&	operator=(Point const& other);
+		~Point(void);
 
 		Point	operator+(Point const& other) const;
 		Point	operator-(Point const& other) const;

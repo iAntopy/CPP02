@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 02:11:28 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/18 07:21:12 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/18 22:58:37 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ Fixed::Fixed(void) : _n(0) {
 
 Fixed::Fixed(Fixed const& other) {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
-//	this->setRawBits(other.getRawBits());
+	this->setRawBits(other.getRawBits());
 }
 
 Fixed::~Fixed(void) {
@@ -31,14 +30,11 @@ Fixed::~Fixed(void) {
 
 Fixed&	Fixed::operator=(Fixed const& other)
 {
+	if (this == &other)
+		return (*this);
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->setRawBits(other.getRawBits());
 	return (*this);
-}
-
-int Fixed::getNbBits(void) const
-{
-	return (this->_frac_nbits);
 }
 
 int	Fixed::getRawBits(void) const
@@ -49,12 +45,5 @@ int	Fixed::getRawBits(void) const
 
 void     Fixed::setRawBits(int const n)
 {
-//	std::cout << "setRawBits member function called" << std::endl;
 	this->_n = n;
-}
-
-std::ostream&	operator<<(std::ostream& out, Fixed const& f)
-{
-	out << "Fixed {fbits: " << f.getNbBits() << ", nb: " << f.getRawBits() << "}" << std::endl;
-	return (out);
 }

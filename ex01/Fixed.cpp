@@ -6,13 +6,11 @@
 /*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 02:11:28 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/18 09:41:01 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/18 23:04:34 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
-#include <cmath>
 
 const int	Fixed::_frac_nbits = 8;
 const float	Fixed::_inverse_nbits_pow2 = 1.0f / (1 << Fixed::_frac_nbits);
