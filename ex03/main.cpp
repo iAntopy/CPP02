@@ -6,7 +6,7 @@
 /*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:41:35 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/18 12:32:35 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/20 23:46:04 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ void	draw_bsp_canvas(Point const& a, Point const& b, Point const& c)
 
 int main( void )
 {
-	Point	a(0.0f, 0.0f);
-	Point	b(60.0f, 60.0f);
-	Point	c(5.0f, 55.0f);
+	Point	a(2.0f, 2.0f);
+	Point	b(65.0f, 2.0f);
+	Point	c(2.0f, 65.0f);
 //	triangle_test_1();
 //	triangle_test_2();
 //	triangle_test_3();
