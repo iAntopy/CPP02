@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iamongeo <iamongeo@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: iamongeo <iamongeo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 19:41:35 by iamongeo          #+#    #+#             */
-/*   Updated: 2023/03/19 00:07:08 by iamongeo         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:40:16 by iamongeo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	triangle_test_3(void)
 
 void	draw_bsp_canvas(Point const& a, Point const& b, Point const& c)
 {
-	const int	width = 60;
-	const int	height = 30;
+	const int	width = 100;
+	const int	height = 50;
 
 	for (int y = 0; y < height; y++)
 	{
@@ -85,15 +85,21 @@ void	draw_bsp_canvas(Point const& a, Point const& b, Point const& c)
 	}
 }
 
-int main( void )
+int main(int argc, char **argv)
 {
-	Point	a(2.0f, 2.0f);
-	Point	b(65.0f, 2.0f);
-	Point	c(2.0f, 65.0f);
+	if (argc < 7)
+	{
+		std::cerr << "ERROR : must give 6 numbers in range [0-100] representing 3 x,y vertices for a triangle to display in terminal." << std::endl;
+		return (1);
+	}
+	Point	a(std::atoi(argv[1]), std::atoi(argv[2]));
+	Point	b(std::atoi(argv[3]), std::atoi(argv[4]));
+	Point	c(std::atoi(argv[5]), std::atoi(argv[6]));
 
 //	triangle_test_1();
 //	triangle_test_2();
 //	triangle_test_3();
+
 	std::cout << "Displaying triangle abc -> a : (" << a.getX() << ", " << a.getY() << ") "
 		<< "b : (" << b.getX() << ", " << b.getY() << ") "
 		<< "c : (" << c.getX() << ", " << c.getY() << ") " << std::endl;
